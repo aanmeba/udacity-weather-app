@@ -13,7 +13,6 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-
 let projectData = {};
 
 app.get('/addDate', function(req, res) {
@@ -25,9 +24,7 @@ app.post('/newEntry', function(req, res) {
     res.send(projectData);
 });
 
-
-
 // Setup Server
-app.listen(8000, function() {
-    console.log("Server is running on port 8000.");
+app.listen(process.env.PORT || 8000, function(){
+    console.log("Server is running successfully");
 });

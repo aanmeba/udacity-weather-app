@@ -4,7 +4,6 @@ const btn = document.querySelector('#generate');
 const showTemp = document.querySelector('#temp');
 const showDate = document.querySelector('#date');
 const showCity = document.querySelector('#entryHolder');
-const showFeeling = document.querySelector('#feelings');
 const showType = document.querySelector('#content');
 const showImg = document.querySelector('#img');
 
@@ -23,6 +22,7 @@ btn.addEventListener('click', function (e) {
     const yourFeeling = document.querySelector('#feelings').value;
     const urlData = baseURL + cityName + apiKey + unit;
 
+    if (cityName && yourFeeling){
     getWeatherData(urlData)
         .then (function(weatherData) {
             const temperature = weatherData.main.temp;
@@ -43,6 +43,9 @@ btn.addEventListener('click', function (e) {
         .then (
             () => updateUI()
         )
+    } else {
+        alert('Enter all fields');
+    }
 });
 
 // Get weather API data
@@ -85,13 +88,8 @@ const updateUI = async () => {
         showCity.innerHTML = `${showData.theCity}\'s weather`;
         showDate.innerHTML = `Today: ${showData.date}`;
         showTemp.innerHTML = `Temperature: ${showData.temp}°C`;
-        showFeeling.innerHTML = `I\'m feeling ${showData.feeling}`;
-        showType.innerHTML = `Weather Type: ${showData.main}`; 
+        showType.innerHTML = `Weather Type: ${showData.main} <br>I\'m feeling ${showData.feeling}`; 
         showImg.innerHTML = `<img src=\"${showData.image}\">`;
-        
-        
-
-        
     } catch (error) {
         console.log('The UI could not be updated', error);
     }

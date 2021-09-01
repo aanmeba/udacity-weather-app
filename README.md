@@ -12,4 +12,4 @@ This project requires you to create an asynchronous web app that uses Web API an
 
 ## Result
 
-Check out the weather app <a href="https://aanmeba.github.io/udacity-weather-app/" target="_blank">here</a>
+Check out the weather app <a href="https://dry-journey-77285.herokuapp.com/" target="_blank">here</a>

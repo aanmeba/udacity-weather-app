@@ -14,4 +14,4 @@ This project requires you to create an asynchronous web app that uses Web API an
 
 Check out the weather app <a href="https://dry-journey-77285.herokuapp.com/" target="_blank">here</a>
 
-<img scr="./img/weather-journal-app-screenshot.png">
+<img scr="/img/weather-journal-app-screenshot.png">
